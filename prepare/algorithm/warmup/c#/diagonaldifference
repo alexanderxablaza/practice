@@ -37,7 +37,7 @@ class Result
                 {
                 DL += arr[i][j];
                 }
-                if(i + j == C)
+                if(i + j == arr[i].Count - 1)
                 {
                     DR += arr[i][j];
                 }

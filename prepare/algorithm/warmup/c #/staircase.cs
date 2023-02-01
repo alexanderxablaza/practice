@@ -24,15 +24,9 @@ class Result
     public static void staircase(int n)
     {
       for(int i=1; i <= n;i++) {
-        for(int j=i; j <= n-1; j++) {
-          Console.Write(" ");
-        }
-        for(int j=n-i;j<n; j++) {
-          Console.Write("#");
-        }
-        if(i != n) {
-          Console.Write("\n");
-        }
+        string pound = new string('#',i);
+        string s = new string(' ',n-i);
+       Console.WriteLine(s+pound);
       }     
     }
 

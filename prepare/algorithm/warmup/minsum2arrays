@@ -1,0 +1,63 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+namespace HelloWold
+{
+    public static class Program 
+    {        
+    	
+    	public static int V(List<int> a, List<int> b)
+        {
+        	if(a.Count < 1 || b.Count < 1)
+        	{
+        		return 0;
+        	}
+        	int smallest = 0;
+            a.Sort();
+            b.Sort();
+        	for(int i = 0, j=0; i < a.Count && j < b.Count ; )
+        	{
+        		
+        	
+        		Console.WriteLine(a[i] - b[j] + "(" + a[i] +"," + b[j] + ")");
+        		if(Math.Abs(a[i] - b[j]) <= smallest) {
+        			Console.WriteLine(Math.Abs(a[i] - b[j]));
+        			smallest = Math.Abs(a[i] - b[j]);
+        		}
+        		Console.WriteLine();
+        	    
+        		if(a[i] < b[j])
+        	    {
+        	    	++i;
+        	        
+        	    }
+        	    else 
+        	    ++j;
+        		
+        	}
+        	Console.WriteLine(smallest);
+        	return smallest;
+        }
+     
+        public static void Mxain()
+        {
+        	V(new List<int>(){1,2,5,4}, new List<int>(){4,3,2,0});
+
+        	V(new List<int>(){10,22,55,42}, new List<int>(){4,3,2,0});
+        	V(new List<int>(){1,552,50,14}, new List<int>(){4,3,2,0});
+        }
+        
+        public static void Main()
+        {
+        	int[] arr = { 1, 24, 38, 12 ,366, 50, 48, 888,66  };
+            var k = from i in arr where i > 40 orderby i descending select i;
+            foreach(int i in k)
+            {
+            	Console.WriteLine(i);
+            }
+            
+        }
+       
+    }
+}
